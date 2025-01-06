@@ -1,0 +1,21 @@
+The following CSS code snippet exhibits an uncommon issue related to specificity and inheritance:
+
+```css
+div {
+  color: blue;
+}
+
+p {
+  color: red;
+}
+
+div p {
+  color: green; /* This rule is unexpectedly overridden */
+}
+
+div span {
+  color: purple; /* This rule works as expected */
+}
+```
+
+The unexpected behavior lies in the `div p` selector.  While it should ideally override the `p` selector due to higher specificity, it's often unexpectedly overridden by the `div` selector in certain browsers or situations.  This is subtle, and may not manifest consistently across all browsers or CSS parsers.
