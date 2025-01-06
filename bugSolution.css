@@ -1,0 +1,27 @@
+The solution involves ensuring the specificity of the `div p` selector is high enough to override the `div` selector. Here are several approaches:
+
+1. **Increase Specificity using IDs:** Assigning an ID to the parent `div` significantly increases specificity.
+
+```css
+#myDiv p {
+  color: green;
+}
+```
+
+2. **Using More Specific Child Selectors:** If IDs are not desired, you can increase specificity by specifying the parent-child relationship more explicitly.
+
+```css
+div > p {
+  color: green; /* Direct child selector */
+}
+```
+
+3. **Important Declaration (Use Sparingly):**  While generally discouraged due to potential maintenance issues, you can use `!important` in extreme cases (this is a last resort).
+
+```css
+div p {
+  color: green !important;
+}
+```
+
+Choosing the best solution depends on the overall CSS structure and context.  Prioritize using IDs or more specific child selectors to avoid unnecessary use of `!important`.
